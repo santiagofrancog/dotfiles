@@ -1,0 +1,33 @@
+. ~/.bash_colors
+
+NO_COLOR='\[\033[00m\]'
+
+BLACK='\[\033[01;30m\]'
+RED='\[\033[01;31m\]'
+BLUE='\[\033[01;34m\]'
+PINK='\[\033[01;35m\]'
+
+GREEN='\[\033[00;32m\]'
+YELLOW='\[\033[00;33m\]'
+AZUL='\[\033[00;34m\]'
+CYAN='\[\033[00;36m\]'
+WHITE='\[\033[00;37m\]'
+
+MUD='\033[0m'
+MUB='\033[38;2;23;104;125m'
+MUC='\033[38;2;26;148;163m'
+
+DV='\033[38;2;100;7;243m'
+DR='\033[38;2;208;181;251m'
+
+clear
+
+USERNAME='\u'
+HOST='\h'
+FOLDER='\w'
+BRANCH='$(__git_ps1 " «%s»")'
+LINE1='╭'
+LINE2='╰'
+TIME='[$(date +%T)]'
+
+export PS1="${NO_COLOR}${WHITE}${LINE1} ${CYAN}${USERNAME}${BLACK}@${BLUE}${TIME}${NO_COLOR}${GREEN}:${FOLDER}${YELLOW}${BRANCH}${WHITE}\n${LINE2}${NO_COLOR} "
