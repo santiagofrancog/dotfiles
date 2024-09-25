@@ -1,0 +1,50 @@
+[core]
+  editor = vim
+  excludesfile = ~/.gitignore
+[color]
+  diff = auto
+  branch = auto
+  interactive = auto
+  status = auto
+[branch]
+  autosetuprebase = always
+[push]
+  default = current
+[pull]
+  rebase = true
+[merge]
+  ff = only
+[commit]
+  gpgsign = true
+[fetch]
+  prune = true
+  pruneTags = true
+[help]
+  # Automatically correct and execute mistyped commands
+  autocorrect = 1
+[init]
+  defaultBranch = main
+[alias]
+  cm = commit --message
+  ca = commit -a --amend --no-edit
+  co = checkout
+  cb = checkout -b
+  cp = cherry-pick
+  st = status --short
+  br = branch
+  rb = rebase
+  rbi = rebase --interactive
+  rbc = rebase --continue
+  lg = log --stat
+  pf = push origin HEAD --force-with-lease
+  cached = diff --cached
+  undo = reset --soft HEAD~1
+  show-patch = format-patch -1 --stdout
+  sha = rev-parse HEAD
+  origin = config --get remote.origin.url
+  current = rev-parse --abbrev-ref HEAD
+  recent = !git for-each-ref --sort=-committerdate --format='%(refname:short)' --count=20 refs/heads/
+  repo = !git remote -v | grep '@.*fetch' | sed 's/.*:\\(.*\\).git.*/\\1/g'
+  pr = !open https://github.com/$(git repo)/compare/$(git current)?expand=1
+  upstream = !git branch --set-upstream-to=origin/$(git current)
+  tags = !git for-each-ref --format='%(taggerdate): %(refname)' --sort=-taggerdate --count=20 refs/tags
