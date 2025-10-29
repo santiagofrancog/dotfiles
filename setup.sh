@@ -44,3 +44,6 @@ snap install aws-cli --classic
 
 # Install make
 apt install make
+
+# Install terminator
+apt install terminator

@@ -14,4 +14,4 @@ __Personal repository to configure my laptops, feel free to use it__
 - run `sudo ./setup-node.sh`
 
 ### Last update 
-26/09/2024 - Ubuntu 24.04 LTS
+29/10/2025 - Ubuntu 24.04 LTS
