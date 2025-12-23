@@ -9,7 +9,7 @@ sdk list java | grep '\-amzn' | awk -F'|' '{print $6}' | sed 's/^[ \t]*//;s/[ \t
     sdk install java "$version"
 done
 
-apt install maven
+sdk install maven $(sdk list maven | grep -v '\-rc' | grep -oE '\b[0-9]+\.[0-9]+\.[0-9]+\b' | sort -V | tail -n1)
 
 # Reload bash
 source ~/.bashrc
